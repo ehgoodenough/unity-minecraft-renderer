@@ -18,6 +18,6 @@ Open up the [`World.json`](Assets/Resources/World.json), and experiment by editi
 
 ### What's next? ###
 
-We are still missing some prefabs for some blocks, like fences and doors and stairs. Consult the [Issues](issues).
+We are still missing some prefabs for some blocks, like fences and doors and stairs. Consult the [Issues](https://github.com/ehgoodenough/unity-minecraft-renderer/issues).
 
 And after that, we make a game. :D
