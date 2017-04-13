@@ -4,8 +4,10 @@ using SimpleJSON;
 
 public class GenerateBlocks : MonoBehaviour {
 
+    public TextAsset asset;
+
     void Start() {
-        TextAsset asset = Resources.Load("World") as TextAsset;
+        // TextAsset asset = Resources.Load("World") as TextAsset;
         JSONNode world = JSON.Parse(asset.text);
 
         if(world["blocks"] == null) {
@@ -24,9 +26,9 @@ public class GenerateBlocks : MonoBehaviour {
                 Debug.LogWarning("Could not find a model for this block; defaulting to a white cube.\n" + node.ToString());
             }
 
-            float x = node["position"]["x"].AsFloat;
-            float y = node["position"]["y"].AsFloat;
-            float z = node["position"]["z"].AsFloat;
+            float x = node["position"]["x"].AsFloat - (17 * 16);
+            float y = node["position"]["y"].AsFloat - (4 * 16);
+            float z = node["position"]["z"].AsFloat - (11 * 16);
             Vector3 position = new Vector3(x, y, z);
 
             Instantiate(model, position, Quaternion.identity, transform);
